@@ -13,8 +13,8 @@ We analyze the [Retailrocket recommender system dataset](https://www.kaggle.com/
 3.  **Observation Leakage Prevention**: The 'transaction' event itself is removed from the input sequences to prevent the model from trivially learning the label.
 4.  **Data Balancing**: We undersample the majority class (no-purchase) to create a balanced training dataset.
 5.  **Model**: We train two separate Categorical HMMs:
-    *   $HMM_{purchase}$: Trained on purchase sequences.
-    *   $HMM_{no\_purchase}$: Trained on no-purchase sequences.
+    *   $HMM_{\verb|purchase|}$: Trained on purchase sequences.
+    *   $HMM_{\verb|no_purchase|}$: Trained on no-purchase sequences.
 6.  **Inference**: We classify new sequences by comparing the log-likelihood of the sequence under both models.
 
 ## Setup
