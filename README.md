@@ -8,7 +8,7 @@ We analyze the [Retailrocket recommender system dataset](https://www.kaggle.com/
 
 ## Methodology
 
-1.  **Sessionization**: User events are grouped into sessions based on a **30-minute inactivity threshold**. This was determined to be optimal after comparing 30, 60, and 120-minute thresholds.
+1.  **Sessionization**: User events are grouped into sessions based on a **30-minute inactivity threshold**. This was determined to be optimal after comparing 10, 20, 30, 60, and 120-minute thresholds.
 2.  **Labeling**: Sessions containing a 'transaction' event are labeled as positive (purchase).
 3.  **Observation Leakage Prevention**: The 'transaction' event itself is removed from the input sequences to prevent the model from trivially learning the label.
 4.  **Data Balancing**: We undersample the majority class (no-purchase) to create a balanced training dataset.
@@ -44,6 +44,16 @@ Open and run the Jupyter Notebook:
 ```bash
 jupyter notebook Refactor_Analysis.ipynb
 ```
+
+### Hyperparameter Tuning
+
+To re-run the hyperparameter tuning experiment (Session Thresholds & Number of Components):
+
+```bash
+python Hyperparameter_Tuning.py
+```
+
+This will generate `hmm_tuning_results.csv` with the accuracy for each combination.
 
 ## Results
 
