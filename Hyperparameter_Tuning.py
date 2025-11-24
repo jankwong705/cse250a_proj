@@ -101,7 +101,7 @@ def run_experiment(threshold_minutes, n_components):
     print(f"Accuracy: {acc:.4f}")
     return acc
 
-thresholds = [30, 60, 120]
+thresholds = [10, 20, 30, 60, 120]
 n_components_list = [2, 3, 4, 5]
 
 experiment_results = []
