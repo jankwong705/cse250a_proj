@@ -15,6 +15,7 @@ We analyze the [Retailrocket recommender system dataset](https://www.kaggle.com/
 5.  **Model**: We train two separate Categorical HMMs:
     *   $HMM_{\verb|purchase|}$: Trained on purchase sequences.
     *   $HMM_{\verb|no_purchase|}$: Trained on no-purchase sequences.
+    *   **Hidden States**: We selected **4 hidden states** (`n_components=4`) after comparing 2, 3, 4, and 5 components. This provided the best balance between model complexity and generalization.
 6.  **Inference**: We classify new sequences by comparing the log-likelihood of the sequence under both models.
 
 ## Setup
